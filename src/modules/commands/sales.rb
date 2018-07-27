@@ -6,7 +6,6 @@ module Bot::DiscordCommands
     extend Discordrb::Commands::CommandContainer
     command :sales do |_event|
       percent = StockMarkit.quote(:gis).change_percent
-      puts "#{percent.to_s}"
       "Gogurt stock #{up_or_down(percent)} #{percent.to_s}%"
     end
     def self.up_or_down(change)
